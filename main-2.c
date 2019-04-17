@@ -2,51 +2,23 @@
 
 int main()
 {
-    printf("Hello World\n");
-    enable_servo(0);
-    enable_servo(3);
-    set_servo_position(3,753);
-    set_servo_position(0,1542);
-    motor(0,50);
-    motor(1,50);
-    msleep(3000);//out of box
-    
-    motor(0,0);
-    motor(1,50);
-    msleep(1800);//rotate
-    
-    motor(0,50);
-    motor(1,50);
-    msleep(7000);//move forward
-    
-    motor(0,50);
-    motor(1,0);
-    msleep(1500);//roate
-    
-    motor(0,50);
-    motor(1,50);
-    msleep(1550);
-    
-    motor(0,0);
-    motor(1,0);
-    msleep(500);
-    
-    motor(0,50);
-    motor(1,0);
-    msleep(600);
-    
-    set_servo_position(3,1098);
-    set_servo_position(0,1542);
-    
+    enable_servo(2);
+    create_connect();
+    set_servo_position(2,1925);
+    create_drive_direct(-95,100);//turn to big tower
+    msleep(1900);
+    create_drive_direct(100,100);//move to big tower
+    msleep(5500);
+    create_drive_direct(0,0);
+    msleep(1000);
+    set_servo_position(2,273);
     msleep(1000);
     
-    motor(0,75);
-    motor(1,75);
-    msleep(5000);
-    
-    
-    
-    
+    create_drive_direct(-100,-100);
+    msleep(2500);
+    create_drive_direct(-100,100);
+    msleep(3000);
+    set_servo_position(2,1925);
     
     return 0;
 }
